@@ -81,7 +81,7 @@ const FormState = (props) => {
     }
 
     try {
-      await axios.post('/api/userform', user, config);
+      await axios.post('/api/userform/', user, config);
 
       console.log('User Added')
 
