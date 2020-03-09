@@ -1,0 +1,79 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(160deg, rgba(22,201,221,1) 14%, rgba(40,74,186,1) 43%, rgba(67,134,242,1) 89%) fixed;
+  font-family: 'Roboto', sans-serif;
+}
+
+.AppBar {
+  text-align: center;
+}
+
+.container {
+  
+  max-width: 500px;
+  margin: auto;
+  
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  margin: 15px;
+  background: green;
+}
+
+.btn-continue {
+  color: #69f0ae ;
+  margin-top: 10rem;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 15px;
+}
+
+.alert {
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  height: 400px;
+
+}
+
+.card-success {
+  padding: 2rem;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.card-confirm {
+  text-align: center;
+  height: 100%;
+}
+
+.txtField {
+  width: 50%;
+}
+
+

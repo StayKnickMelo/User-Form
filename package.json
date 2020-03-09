@@ -1,0 +1,27 @@
+{
+  "name": "form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "config": "^3.3.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "mongoose": "^5.9.3"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "form": "npm start --prefix form",
+    "forminstall": "npm install --prefix form",
+    "dev": "concurrently \"npm run server \" \"npm run form\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix form && npm run build --prefix form"
+    
+  },
+  "author": "",
+  "license": "ISC"
+}
