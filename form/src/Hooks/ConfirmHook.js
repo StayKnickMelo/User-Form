@@ -1,4 +1,4 @@
-import React, { useContext, Fragment, useEffect } from 'react';
+import React, { useContext, Fragment} from 'react';
 
 import FormContext from '../formContext';
 
@@ -21,11 +21,7 @@ const ConfirmHook = () => {
   const { firstName, lastName, bio, city, email, occupation, nextStep, prevStep, submit, error, showAlert } = formContext;
 
 
-  // useEffect(()=>{
-  //   if(error){
-  //     console.log('ERROR')
-  //   }
-  // },[error])
+  
 
   const onClick = () => {
 
@@ -36,7 +32,7 @@ const ConfirmHook = () => {
       const user = {
         firstName,
         lastName,
-        email,
+        email: email.toLowerCase(),
         city,
         occupation,
         bio
@@ -44,7 +40,6 @@ const ConfirmHook = () => {
 
       submit(user);
 
-      // nextStep();
 
     }
 
