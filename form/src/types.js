@@ -4,3 +4,8 @@ export const REMOVE_ALERT = 'REMOVE_ALERT';
 export const NEXT = 'NEXT';
 export const PREV = 'PREV';
 export const MAIN_PAGE = 'MAIN_PAGE';
+
+export const SET_LOADING = 'SET_LOADING'
+
+
+export const SUCCESS = 'SUCCESS';

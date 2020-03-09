@@ -35,7 +35,9 @@ router.post('/', [
 
     await user.save();
 
-    res.send(user);
+    res.send(req.body)
+
+    
 
     console.log('User Added')
 

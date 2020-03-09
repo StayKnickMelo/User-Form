@@ -8,7 +8,9 @@ import {
   PREV,
   SHOW_ALERT,
   REMOVE_ALERT,
-  MAIN_PAGE
+  MAIN_PAGE,
+  SUCCESS,
+  SET_LOADING
 } from './types';
 
 import axios from 'axios';
@@ -17,6 +19,7 @@ const FormState = (props) => {
 
   const initialState = {
     step: 1,
+    loading: false,
     error: null,
     showError: false,
     firstName: '',
@@ -74,24 +77,49 @@ const FormState = (props) => {
   }
 
   const submit = async (user) => {
+
     const config = {
       headers: {
         'Content-type': 'application/json'
       }
     }
 
+    setLoading();
+
     try {
       await axios.post('/api/userform/', user, config);
+
+      dispatch({
+        type: SUCCESS
+      })
 
       console.log('User Added')
 
     } catch (err) {
-      console.log(err.message);
+
+      dispatch({
+        type: SHOW_ALERT,
+        payload: err.response.data.msg
+      });
+
+      setTimeout(() => {
+        dispatch({
+          type: REMOVE_ALERT
+        })
+      }, 3000);
+
+      console.log(err.response.data.msg);
 
     }
 
 
 
+  }
+
+  const setLoading = ()=> {
+    dispatch({
+      type: SET_LOADING
+    })
   }
 
 
@@ -107,6 +135,7 @@ const FormState = (props) => {
       occupation: state.occupation,
       city: state.city,
       bio: state.bio,
+      loading: state.loading,
       getInput,
       nextStep,
       prevStep,

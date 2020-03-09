@@ -20,9 +20,9 @@ body {
   
   max-width: 500px;
   margin: auto;
-  
   align-items: center;
   margin-top: 2rem;
+  padding: 1rem;
 }
 
 .btn {
